@@ -16,113 +16,112 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
 	<meta name="theme-color" content="#fff8ff">
-	
-	<script type="text/javascript" src="js/janus.js" ></script>
+
+	<script type="text/javascript" src="js/janus.js"></script>
 	<script type="text/javascript" src="js/audiobridge.js"></script>
 </head>
 
 <body>
 	<div class="reveal">
 		<div class="slides">
+			<!-- 0 / landing page -->
 			<section>
+				<p>
+					<button type="button" onclick="Reveal.configure({ controls: false })">Hide controls</button>
+					<button type="button" onclick="Reveal.configure({ controls: true })">Show controls</button>
+				</p>
 				<h2>Willkommen im open-museum</h2>
 				<p>
 					<img width="200" height="200" data-src="https://media0.giphy.com/media/2gUHK3J2NCMsqsz1su/giphy.gif"
 						alt="Erklärgif">
 				</p>
+				<!-- 
+					Create or join group!!
+				-->
 				<p>
-					<button type="button" onclick="Reveal.configure({ controls: false })">Hide controls</button>
-					<button type="button" onclick="Reveal.configure({ controls: true })">Show controls</button>
+					Besuchst du uns
+				</p>
+				<p><a href="#/3" id="linkToPublic">ALLEINE</a> oder <a href="#/4">MIT FREUNDENEINE</a></p>
+			</section>
+			<!-- 1 / map -->
+			<section>
+				<h2>Grundriss</h2>
+				<p>
+					Bla
 				</p>
 				<p>
-					Besuchst du uns <a href="#">ALLEINE</a> oder <a href="#">MIT FREUNDENEINE</a>
+					<a href="javascript:history.back()">Zurück</a>
 				</p>
 			</section>
+			<!-- 2 / failure -->
 			<section>
-				<h3>Broadcast ID</h3>
-				<div>A broadcast id must be defined by the master.</div>
-				<div>Please enter or change the broadcast id below:</div>
-				<div><input type="text" id="broadcastid" style="font-size:70%;" onchange="updateURL();"
-						onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"></div>
+				<h2>Oh Noooo</h2>
+				<p>
+					Etwas ist schief gelaufen. Was willst du tun?
+				</p>
+				<p>
+					<a href="#">Ich probier es nochmals</a>
+				</p>
+				<p>
+					<a href="#/2">Ohne Chat weiter</a>
+				</p>
 			</section>
+			<!-- 3 / success -->
 			<section>
-				<h3>Provide password</h3>
-				<div>A password is required to start a broadcast.</div>
-				<div> Please enter a password (or simply use the preset password) below:</div>
-				<div><input type="password" id="password" style="font-size:70%;" value="123456"></div>
+				<h2>Yeah</h2>
+				<p>
+					Heureka! Du bist erfolgreich einer Besuchergruppe beigetreten.
+				</p>
+				<p>
+					<a href="#/7">Los gehts</a>
+				</p>
 			</section>
+			<!-- 4 / select create or join group -->
 			<section>
-				<h3>Start broadcast</h3>
-				<div>Click <a href="#"
-						onclick="RevealBroadcast.start( { id: document.getElementById('broadcastid').value, password: document.getElementById('password').value } ); return false;"><i
-							class="fa fa-rss"></i>HERE</a> to start the broadcast with the given id.</div>
-				<div style="color:gray;font-size:20px">
-					This may not work on all browsers. Please check the documentation on <a
-						href="https://github.com/rajgoel/reveal.js-plugins/tree/master/broadcast">Github</a>
-				</div>
+				<h2>Hast du bereits eine Gruppe?</h2>
+				<p>
+					Wähle ob du eine neue Gruppe erstellen möchtest oder ob du einer bestehenden Gruppe beitretten
+					möchtest.
+				</p>
+				<p>
+					<a href="#/6">neue Gruppe</a>
+				</p>
+				<p>
+					<a href="#/2">bestehende Gruppe</a>
+				</p>
 			</section>
+			<!-- 5 / which group to join -->
 			<section>
-				<section>
-					<h2>Client</h2>
-					<div>A client can join an existing broadcast.</div>
-				</section>
-				<section>
-					<h2>Broadcast ID</h2>
-					<div>
-						Each client must use the broadcast id of the master, e.g., for this presentation, the master may
-						share below link to the client<br>
-						<a id="broadcasturl"></a>
-					</div>
-				</section>
-				<section>
-					<h2>Join broadcast</h2>
-					<div>Click <a href="#"
-							onclick="RevealBroadcast.connect( { id: document.getElementById('broadcastid').value } ); return false;"><i
-								class="fa fa-toggle-right"></i></a> to connect to the broadcast with id <span
-							style="color:red" id="currentid"></span>.</div>
-				</section>
+				<h2>Zu welcher Gruppe willst du?</h2>
+				<p>
+					Gib deine Gruppennummer ein
+				</p>
+				<p>
+					<input type="text" id="group" name="group">
+				</p>
+				<p>
+					<a href="#/3" id="linkToGroup">verbinden</a>
+					<!-- 
+						Query string auslesen
+						https://www.sitepoint.com/get-url-parameters-with-javascript/
+						https://dev.to/ganeshmani/how-to-get-query-string-parameters-in-javascript-2019-4dm2 
+
+					-->
+				</p>
 			</section>
+			<!-- 6 / group joined -->
 			<section>
-				<h2>Auf welche Reise willst du?</h2>
-				<table style="width:100%">
-					<tr>
-						<td><a href="#">1918 Spanische Grippe</a></td>
-						<td>1961 Cholera</td>
-					</tr>
-					<tr>
-						<td>1980 HIV</td>
-						<td>2002 SARS</td>
-					</tr>
-				</table>
+				<h2>Heureka</h2>
+				<p>
+					Neue Gruppe <b>3532</b> erfolgreich erstellt. </p>
+				<p>Teile den Link mit deinen Freunden:
+					<a href="https://open-museum.ch/?group=3532#/3">open-museum.ch/?=chat=3532#/3</a>
+				</p>
+				<p>
+					<a href="?group=3532#/3">Weiter</a>
+				</p>
 			</section>
-			<section>Patient Zero</section>
-			<section>
-				<section>
-					<h2>Vertical Slides</h2>
-					<p>Slides can be nested inside of each other.</p>
-					<p>Use the <em>Space</em> key to navigate through all slides.</p>
-					<br>
-					<a href="#" class="navigate-down">
-						<img width="178" height="238"
-							data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-					</a>
-				</section>
-				<section>
-					<h2>Basement Level 1</h2>
-					<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.
-					</p>
-				</section>
-				<section>
-					<h2>Basement Level 2</h2>
-					<p>That's it, time to go back up.</p>
-					<br>
-					<a href="#/2">
-						<img width="178" height="238"
-							data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow"
-							style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-					</a>
-				</section>
-			</section>
+			<!-- 7 / start -->
 			<section>Patient Zero</section>
 		</div>
 
@@ -131,57 +130,7 @@
 	<script src="js/reveal.js"></script>
 
 	<script>
-		// Manage presentation specific handling of broadcast id
-		// (optional)
-		function addParam(url, param, value) {
-			var a = document.createElement('a'),
-				regex = /(?:\?|&amp;|&)+([^=]+)(?:=([^&]*))*/g;
-			var match, str = [];
-			a.href = url;
-			param = encodeURIComponent(param);
-			while (match = regex.exec(a.search))
-				if (param != match[1]) str.push(match[1] + (match[2] ? "=" + match[2] : ""));
-			str.push(param + (value ? "=" + encodeURIComponent(value) : ""));
-			a.search = str.join("&");
-			return a.href;
-		}
-
-		function updateURL() {
-			document.getElementById("broadcasturl").href = addParam(window.location.href, "broadcastid", document
-				.getElementById('broadcastid').value);
-			document.getElementById("broadcasturl").innerHTML = addParam(window.location.href, "broadcastid", document
-				.getElementById('broadcastid').value);
-			document.getElementById("currentid").innerHTML = document.getElementById('broadcastid').value;
-		}
-
-		function getRandomString() {
-			if (window.crypto && window.crypto.getRandomValues && navigator.userAgent.indexOf('Safari') === -1) {
-				var a = window.crypto.getRandomValues(new Uint32Array(3)),
-					token = '';
-				for (var i = 0, l = a.length; i < l; i++) {
-					token += a[i].toString(36);
-				}
-				return token;
-			} else {
-				return (Math.random() * new Date().getTime()).toString(36).replace(/\./g, '');
-			}
-		}
-
-		function getParameterByName(name, url) {
-			if (!url) {
-				url = window.location.href;
-			}
-			name = name.replace(/[\[\]]/g, "\\$&");
-			var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-				results = regex.exec(url);
-			if (!results) return null;
-			if (!results[2]) return '';
-			return decodeURIComponent(results[2].replace(/\+/g, " "));
-		}
-
-		document.getElementById("broadcastid").value = getParameterByName('broadcastid') || getRandomString();
-		updateURL();
-
+		// See the link above for getUrlParams
 		// More info about config & dependencies:
 		// - https://github.com/hakimel/reveal.js#configuration
 		// - https://github.com/hakimel/reveal.js#dependencies
@@ -210,10 +159,10 @@
 
 			// Add the current slide number to the URL hash so that reloading the
 			// page/copying the URL will return you to the same slide
-			hash: false,
+			hash: true,
 
 			// Push each slide change to the browser history. Implies `hash: true`
-			history: false,
+			history: true,
 
 			// Enable keyboard shortcuts for navigation
 			keyboard: false,
@@ -357,49 +306,31 @@
 				// don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
 				// 32: null 
 			},
-			broadcast: {
-				// Set master password to "123456"
-				secret: '$2a$05$hhgakVn1DWBfgfSwMihABeYToIBEiQGJ.ONa.HWEiNGNI6mxFCy8S',
-				// Configure RTCMultiConnection
-				// secret: '$2a$05$hhgakVn1DWBfgfSwMihABeYToIBEiQGJ.ONa.HWEiNGNI6mxFCy8S',
-				connection: {
-					// For testing purposes you may use below server, but availability and stability are not guaranteed. 
-					// For anything mission critical I recommend you run your own server. 
-					// You can deploy https://github.com/muaz-khan/RTCMultiConnection on heroku.com
-					// See instructions at https://github.com/muaz-khan/RTCMultiConnection/blob/master/docs/installation-guide.md
-					//					socketURL: 'https://rtcmulticonnection.herokuapp.com:443/'
-					socketURL: "https://revealjs-broadcast.herokuapp.com:443/",
-					session: {
-						audio: true,
-						video: false
-					}
-				},
-			},
-			dependencies: [
-				// ...
-				{
-					src: '../reveal.js-plugins/broadcast/RTCMultiConnection/RTCMultiConnection.min.js'
-				},
-				{
-					src: '../reveal.js-plugins/broadcast/RTCMultiConnection/adapter.js'
-				},
-				{
-					src: '../reveal.js-plugins/broadcast/RTCMultiConnection/socket.io.js'
-				},
-				{
-					src: '../reveal.js-plugins/broadcast/bCrypt.js'
-				},
-				{
-					src: '../reveal.js-plugins/broadcast/broadcast.js'
-				},
-				// ...
-			],
 		});
 		// A ready event is fired when reveal.js has loaded all non-async dependencies and is ready to start navigating. To check if reveal.js is already 'ready' you can call Reveal.isReady().
 		// Note that we also add a .ready class to the .reveal element so that you can hook into this with CSS.
 		Reveal.addEventListener('ready', function (event) {
 			// event.currentSlide, event.indexh, event.indexv
 		});
+
+		// Generate url for lonely wolf with query string
+		document.getElementById("linkToPublic").onclick = function () {
+			const publicRoom = 2405
+			location.href = "?group=" + publicRoom + "#/3";
+		};
+
+		// Generate url for groups with query string
+		document.getElementById("linkToGroup").onclick = function () {
+			location.href = "?group=" + document.getElementById('group').value + "#/3";
+		};
+
+		// Read group number from query string
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		document.getElementById('group').value = urlParams.get('group');
+
+		// TODO Check if group not in chats `location.href = "#/2"`
+		
 	</script>
 </body>
 
