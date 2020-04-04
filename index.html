@@ -1,50 +1,336 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+	<title>open museum</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/open-museum.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/open-museum.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="theme-color" content="#fff8ff">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<script type="text/javascript" src="js/janus.js"></script>
+	<script type="text/javascript" src="js/audiobridge.js"></script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- 0 / landing page -->
+			<section>
+				<p>
+					<button type="button" onclick="Reveal.configure({ controls: false })">Hide controls</button>
+					<button type="button" onclick="Reveal.configure({ controls: true })">Show controls</button>
+				</p>
+				<h2>Willkommen im open-museum</h2>
+				<p>
+					<img width="200" height="200" data-src="https://media0.giphy.com/media/2gUHK3J2NCMsqsz1su/giphy.gif"
+						alt="Erklärgif">
+				</p>
+				<!-- 
+					Create or join group!!
+				-->
+				<p>
+					Besuchst du uns
+				</p>
+				<p><a href="#/3" id="linkToPublic">ALLEINE</a> oder <a href="#/4">MIT FREUNDENEINE</a></p>
+			</section>
+			<!-- 1 / map -->
+			<section>
+				<h2>Grundriss</h2>
+				<p>
+					Bla
+				</p>
+				<p>
+					<a href="javascript:history.back()">Zurück</a>
+				</p>
+			</section>
+			<!-- 2 / failure -->
+			<section>
+				<h2>Oh Noooo</h2>
+				<p>
+					Etwas ist schief gelaufen. Was willst du tun?
+				</p>
+				<p>
+					<a href="#">Ich probier es nochmals</a>
+				</p>
+				<p>
+					<a href="#/2">Ohne Chat weiter</a>
+				</p>
+			</section>
+			<!-- 3 / success -->
+			<section>
+				<h2>Yeah</h2>
+				<p>
+					Heureka! Du bist erfolgreich einer Besuchergruppe beigetreten.
+				</p>
+				<p>
+					<a href="#/7">Los gehts</a>
+				</p>
+			</section>
+			<!-- 4 / select create or join group -->
+			<section>
+				<h2>Hast du bereits eine Gruppe?</h2>
+				<p>
+					Wähle ob du eine neue Gruppe erstellen möchtest oder ob du einer bestehenden Gruppe beitretten
+					möchtest.
+				</p>
+				<p>
+					<a href="#/6">neue Gruppe</a>
+				</p>
+				<p>
+					<a href="#/2">bestehende Gruppe</a>
+				</p>
+			</section>
+			<!-- 5 / which group to join -->
+			<section>
+				<h2>Zu welcher Gruppe willst du?</h2>
+				<p>
+					Gib deine Gruppennummer ein
+				</p>
+				<p>
+					<input type="text" id="group" name="group">
+				</p>
+				<p>
+					<a href="#/3" id="linkToGroup">verbinden</a>
+					<!-- 
+						Query string auslesen
+						https://www.sitepoint.com/get-url-parameters-with-javascript/
+						https://dev.to/ganeshmani/how-to-get-query-string-parameters-in-javascript-2019-4dm2 
+
+					-->
+				</p>
+			</section>
+			<!-- 6 / group joined -->
+			<section>
+				<h2>Heureka</h2>
+				<p>
+					Neue Gruppe <b>3532</b> erfolgreich erstellt. </p>
+				<p>Teile den Link mit deinen Freunden:
+					<a href="https://open-museum.ch/?group=3532#/3">open-museum.ch/?=chat=3532#/3</a>
+				</p>
+				<p>
+					<a href="?group=3532#/3">Weiter</a>
+				</p>
+			</section>
+			<!-- 7 / start -->
+			<section>Patient Zero</section>
 		</div>
 
-		<script src="js/reveal.js"></script>
+	</div>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				hash: true,
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-		</script>
-	</body>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// See the link above for getUrlParams
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+
+			// Display presentation control arrows
+			// TODO remove
+			controls: true,
+
+			// Help the user learn the controls by providing hints, for example by
+			// bouncing the down arrow when they first encounter a vertical slide
+			controlsTutorial: false,
+
+			// Determines where controls appear, "edges" or "bottom-right"
+			controlsLayout: 'edges',
+
+			// Visibility rule for backwards navigation arrows; "faded", "hidden"
+			// or "visible"
+			controlsBackArrows: 'faded',
+
+			// Display a presentation progress bar
+			progress: false,
+
+			// Display the page number of the current slide
+			slideNumber: false,
+
+			// Add the current slide number to the URL hash so that reloading the
+			// page/copying the URL will return you to the same slide
+			hash: true,
+
+			// Push each slide change to the browser history. Implies `hash: true`
+			history: true,
+
+			// Enable keyboard shortcuts for navigation
+			keyboard: false,
+
+			// Enable the slide overview mode
+			overview: false,
+
+			// Vertical centering of slides
+			center: false,
+
+			// Enables touch navigation on devices with touch input
+			touch: true,
+
+			// Loop the presentation
+			loop: false,
+
+			// Change the presentation direction to be RTL
+			rtl: false,
+
+			// See https://github.com/hakimel/reveal.js/#navigation-mode
+			navigationMode: 'default',
+
+			// Randomizes the order of slides each time the presentation loads
+			shuffle: false,
+
+			// Turns fragments on and off globally
+			fragments: false,
+
+			// Flags whether to include the current fragment in the URL,
+			// so that reloading brings you to the same fragment position
+			fragmentInURL: false,
+
+			// Flags if the presentation is running in an embedded mode,
+			// i.e. contained within a limited portion of the screen
+			embedded: false,
+
+			// Flags if we should show a help overlay when the questionmark
+			// key is pressed
+			help: false,
+
+			// Flags if speaker notes should be visible to all viewers
+			showNotes: false,
+
+			// Global override for autoplaying embedded media (video/audio/iframe)
+			// - null: Media will only autoplay if data-autoplay is present
+			// - true: All media will autoplay, regardless of individual setting
+			// - false: No media will autoplay, regardless of individual setting
+			autoPlayMedia: null,
+
+			// Global override for preloading lazy-loaded iframes
+			// - null: Iframes with data-src AND data-preload will be loaded when within
+			//   the viewDistance, iframes with only data-src will be loaded when visible
+			// - true: All iframes with data-src will be loaded when within the viewDistance
+			// - false: All iframes with data-src will be loaded only when visible
+			preloadIframes: true,
+
+			// Number of milliseconds between automatically proceeding to the
+			// next slide, disabled when set to 0, this value can be overwritten
+			// by using a data-autoslide attribute on your slides
+			autoSlide: 0,
+
+			// Stop auto-sliding after user input
+			autoSlideStoppable: true,
+
+			// Use this method for navigation when auto-sliding
+			autoSlideMethod: Reveal.navigateNext,
+
+			// Specify the average time in seconds that you think you will spend
+			// presenting each slide. This is used to show a pacing timer in the
+			// speaker view
+			defaultTiming: 120,
+
+			// Specify the total time in seconds that is available to
+			// present.  If this is set to a nonzero value, the pacing
+			// timer will work out the time available for each slide,
+			// instead of using the defaultTiming value
+			totalTime: 0,
+
+			// Specify the minimum amount of time you want to allot to
+			// each slide, if using the totalTime calculation method.  If
+			// the automated time allocation causes slide pacing to fall
+			// below this threshold, then you will see an alert in the
+			// speaker notes window
+			minimumTimePerSlide: 0,
+
+			// Enable slide navigation via mouse wheel
+			mouseWheel: false,
+
+			// Hide cursor if inactive
+			hideInactiveCursor: false,
+
+			// Time before the cursor is hidden (in ms)
+			hideCursorTime: 5000,
+
+			// Hides the address bar on mobile devices
+			hideAddressBar: true,
+
+			// Opens links in an iframe preview overlay
+			// Add `data-preview-link` and `data-preview-link="false"` to customise each link
+			// individually
+			previewLinks: false,
+
+			// Transition style
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Transition speed
+			transitionSpeed: 'slow', // default/fast/slow
+
+			// Transition style for full page slide backgrounds
+			backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+
+			// Number of slides away from the current that are visible
+			viewDistance: 3,
+
+			// Number of slides away from the current that are visible on mobile
+			// devices. It is advisable to set this to a lower number than
+			// viewDistance in order to save resources.
+			mobileViewDistance: 2,
+
+			// Parallax background image
+			parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+			// Parallax background size
+			parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+			// Number of pixels to move the parallax background per slide
+			// - Calculated automatically unless specified
+			// - Set to 0 to disable movement along an axis
+			parallaxBackgroundHorizontal: null,
+			parallaxBackgroundVertical: null,
+
+			// The display mode that will be used to show slides
+			display: 'block',
+
+			// 
+			keyboard: {
+				// go to the next slide when the ENTER key is pressed
+				// 13: 'next', 
+				// do something custom when ESC is pressed
+				// 27: function() {}, 
+				// don't do anything when SPACE is pressed (i.e. disable a reveal.js default binding)
+				// 32: null 
+			},
+		});
+		// A ready event is fired when reveal.js has loaded all non-async dependencies and is ready to start navigating. To check if reveal.js is already 'ready' you can call Reveal.isReady().
+		// Note that we also add a .ready class to the .reveal element so that you can hook into this with CSS.
+		Reveal.addEventListener('ready', function (event) {
+			// event.currentSlide, event.indexh, event.indexv
+		});
+
+		// Generate url for lonely wolf with query string
+		document.getElementById("linkToPublic").onclick = function () {
+			const publicRoom = 2405
+			location.href = "?group=" + publicRoom + "#/3";
+		};
+
+		// Generate url for groups with query string
+		document.getElementById("linkToGroup").onclick = function () {
+			location.href = "?group=" + document.getElementById('group').value + "#/3";
+		};
+
+		// Read group number from query string
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		document.getElementById('group').value = urlParams.get('group');
+
+		// TODO Check if group not in chats `location.href = "#/2"`
+		
+	</script>
+</body>
+
 </html>
