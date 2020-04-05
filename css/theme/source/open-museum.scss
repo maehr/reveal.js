@@ -51,3 +51,148 @@ section.has-light-background {
 .reveal p, h1, h2, h3, h4 {
 	text-align: left;
 }
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-rows: 2fr 8fr 2fr;
+	gap: 0px 0px;
+	grid-template-areas: ". up .""left frame right""buttons down logo";
+}
+
+.grid-container-text {
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-rows: 2fr 8fr 2fr;
+	gap: 0px 0px;
+	grid-template-areas: "mute up .""left frame-text right""map down logo";
+}
+
+.grid-container-mixed {
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-rows: 2fr 8fr 2fr;
+	gap: 0px 0px;
+	grid-template-areas: ". up .""left frame-mixed right""buttons down logo";
+}
+
+.grid-container-portrait {
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-rows: 2fr 8fr 2fr;
+	gap: 0px 0px;
+	grid-template-areas: ". up .""left frame-portrait right""buttons down logo";
+}
+
+.grid-container-landscape {
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-rows: 2fr 8fr 2fr;
+	gap: 0px 0px;
+	grid-template-areas: ". up .""left frame-landscape right""buttons down logo";
+}
+
+.left {
+	grid-area: left;
+	text-align: left;
+}
+
+.right {
+	grid-area: right;
+	text-align: right;
+}
+
+.up {
+	grid-area: up;
+}
+
+.down {
+	grid-area: down;
+}
+
+
+.logo {
+	grid-area: logo;
+	text-align: center;
+}
+
+.mute {
+	grid-area: mute;
+	text-align: left;
+}
+
+.map {
+	grid-area: map;
+	text-align: left;
+}
+
+
+.buttons {
+	grid-area: buttons;
+}
+
+.frame {
+	display: grid;
+	grid-template-columns: 1fr 7fr;
+	grid-template-rows: 1fr;
+	gap: 1px 1px;
+	grid-template-areas: "icon content";
+	grid-area: frame;
+}
+
+.frame-text {
+	display: grid;
+	grid-template-columns: 1fr 7fr;
+	grid-template-rows: 1fr;
+	gap: 1px 1px;
+	grid-template-areas: "icon content";
+	grid-area: frame-text;
+}
+
+.frame-mixed {
+	display: grid;
+	grid-template-columns: 1fr 6fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 1px 1px 1px;
+	grid-template-areas: "icon content mixed";
+	grid-area: frame-mixed;
+}
+
+.frame-portrait {
+	display: grid;
+	grid-template-columns: 1fr 4fr 3fr;
+	grid-template-rows: 1fr;
+	gap: 1px 1px 1px;
+	grid-template-areas: "icon content portrait";
+	grid-area: frame-portrait;
+}
+
+.frame-landscape {
+	display: grid;
+	grid-template-columns: 1fr 5fr 2fr;
+	grid-template-rows: 1fr;
+	gap: 1px 1px 1px;
+	grid-template-areas: "icon landscape content";
+	grid-area: frame-landscape;
+}
+
+.icon {
+	grid-area: icon;
+	flex: 0 1 auto;
+}
+
+.content {
+	grid-area: content;
+	flex-grow: 1;
+}
+
+.mixed {
+	grid-area: mixed;
+}
+
+.landscape {
+	grid-area: landscape;
+}
+
+.portrait {
+	grid-area: portrait;
+}
