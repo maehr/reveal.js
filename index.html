@@ -20,48 +20,339 @@
 	<script type="text/javascript" src="js/janus.js"></script>
 	<!-- <script type="text/javascript" src="js/audiobridge.js"></script> -->
 	<style>
+		.grid-container {
+			display: grid;
+			grid-template-columns: 1fr 8fr 1fr;
+			grid-template-rows: 2fr 8fr 2fr;
+			gap: 0px 0px;
+			grid-template-areas: ". up .""left frame right""buttons down logo";
+		}
 
-body {
-	background-image: url(images/logo@1.png);
-	background-size: 80px;
-	background-position: 99% 97%;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	padding-bottom: 1;
-	z-index: -1;
-}
-.fart {
-	background-image: url(images/logo@1.png);
-	background-size: 80px;
-	background-position: 80% 97%;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	padding-bottom: 1;
-	z-index: -1;
-}
-.intro {
-	background-color: yellow;
-  }
+		.grid-container-text {
+			display: grid;
+			grid-template-columns: 1fr 8fr 1fr;
+			grid-template-rows: 2fr 8fr 2fr;
+			gap: 0px 0px;
+			grid-template-areas: ". up .""left frame-text right""buttons down logo";
+		}
+
+		.grid-container-mixed {
+			display: grid;
+			grid-template-columns: 1fr 8fr 1fr;
+			grid-template-rows: 2fr 8fr 2fr;
+			gap: 0px 0px;
+			grid-template-areas: ". up .""left frame-mixed right""buttons down logo";
+		}
+
+		.grid-container-portrait {
+			display: grid;
+			grid-template-columns: 1fr 8fr 1fr;
+			grid-template-rows: 2fr 8fr 2fr;
+			gap: 0px 0px;
+			grid-template-areas: ". up .""left frame-portrait right""buttons down logo";
+		}
+
+		.grid-container-landscape {
+			display: grid;
+			grid-template-columns: 1fr 8fr 1fr;
+			grid-template-rows: 2fr 8fr 2fr;
+			gap: 0px 0px;
+			grid-template-areas: ". up .""left frame-landscape right""buttons down logo";
+		}
+
+		.left {
+			grid-area: left;
+		}
+
+		.right {
+			grid-area: right;
+		}
+
+		.logo {
+			grid-area: logo;
+		}
+
+		.buttons {
+			grid-area: buttons;
+		}
+
+		.up {
+			grid-area: up;
+		}
+
+		.down {
+			grid-area: down;
+		}
+
+		.frame {
+			display: grid;
+			grid-template-columns: 1fr 7fr;
+			grid-template-rows: 1fr;
+			gap: 1px 1px;
+			grid-template-areas: "icon content";
+			grid-area: frame;
+		}
+
+		.frame-text {
+			display: grid;
+			grid-template-columns: 1fr 7fr;
+			grid-template-rows: 1fr;
+			gap: 1px 1px;
+			grid-template-areas: "icon content";
+			grid-area: frame-text;
+		}
+
+		.frame-mixed {
+			display: grid;
+			grid-template-columns: 1fr 6fr 1fr;
+			grid-template-rows: 1fr;
+			gap: 1px 1px 1px;
+			grid-template-areas: "icon content mixed";
+			grid-area: frame-mixed;
+		}
+
+		.frame-portrait {
+			display: grid;
+			grid-template-columns: 1fr 4fr 3fr;
+			grid-template-rows: 1fr;
+			gap: 1px 1px 1px;
+			grid-template-areas: "icon content portrait";
+			grid-area: frame-portrait;
+		}
+
+		.frame-landscape {
+			display: grid;
+			grid-template-columns: 1fr 5fr 2fr;
+			grid-template-rows: 1fr;
+			gap: 1px 1px 1px;
+			grid-template-areas: "icon landscape content";
+			grid-area: frame-landscape;
+		}
+
+		.icon {
+			grid-area: icon;
+		}
+
+		.content {
+			grid-area: content;
+		}
+
+		.mixed {
+			grid-area: mixed;
+		}
+
+		.landscape {
+			grid-area: landscape;
+		}
+
+		.portrait {
+			grid-area: portrait;
+		}
+
+
+		.body {
+			background-image: url(images/logo@1.png);
+			background-size: 90px;
+			background-position: 99% 97%;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			padding-bottom: 1;
+			z-index: 999;
+		}
+
+		.buttons {
+			background-image: url(images/mute@1.png), url(images/map@1.png);
+			background-size: 80px, 80px;
+			background-position: 1% 99%, 6.5% 99%;
+			background-repeat: no-repeat, no-repeat;
+			background-attachment: fixed, fixed;
+			padding-bottom: 1, 1;
+		}
+
+		.naviright {
+			background-image: url(images/navi_right@1.png);
+			background-size: 70px;
+			background-position: center right;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+
+		}
+
+		.navileft {
+			background-image: url(images/navi_left@1.png);
+			background-size: 70px;
+			background-position: center left;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+
+		}
+
+		.naviup {
+			background-image: url(images/navi_up@1.png);
+			background-size: 127px;
+			background-position: top center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+
+		}
+
+		.navidown {
+			background-image: url(images/navi_down@1.png);
+			background-size: 127px;
+			background-position: bottom center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+
+		}
+
+		.img2 {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			background: url("https://www.google.com/images/srpr/logo11w.png") no-repeat;
+		}
 	</style>
 </head>
 
 <body>
 	<div class="reveal">
 		<div class="slides">
+			<section>
+				<div class="grid-container-text">
+					<div class="left">
+						
+					</div>
+					<div class="right"></div>
+					<div class="logo">
+						<a href="#">
+							<img alt="open museum" src="images/logo@1.png">
+						</a>
+					</div>
+					<div class="buttons"></div>
+					<div class="up"></div>
+					<div class="down"></div>
+					<div class="frame-text">
+						<div class="icon">
+							BOLLE
+						</div>
+						<div class="content">
+							<h3>Textlayout</h3>
+							<p>Anfang 1918 wird in Kansas (US) von einer neuen, heftigen Grippe berichtet. Kurz darauf
+								wird der
+								erste Fall im militärischen Ausbildungslager Camp Funston registriert: Der
+								Küchenunteroffizier
+								Albert Gitchell gilt als Patient O. Das Virus bereitet sich in den militärischen Lagern
+								rasch weiter
+								aus.
+							</p>
+							<p>
+								Andere Wissenschaftler vermuten den Ursprungsort des Virus im Fernen Osten. Gesichert
+								ist: Es
+								handelt sich um ein Vogelgrippevirus, das von Wasservögeln auf den Menschen übertragen
+								wurde.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="grid-container-mixed">
+					<div class="left"></div>
+					<div class="right"></div>
+					<div class="logo"></div>
+					<div class="buttons"></div>
+					<div class="up"></div>
+					<div class="down"></div>
+					<div class="frame-mixed">
+						<div class="icon">
+							BOLLE
+						</div>
+						<div class="content">
+							<h3>Gemischtes Layout</h3>
+							<p>Anfang 1918 wird in Kansas (US) von einer neuen, heftigen Grippe berichtet. Kurz darauf
+								wird der
+								erste Fall im militärischen Ausbildungslager Camp Funston registriert: Der
+								Küchenunteroffizier
+								Albert Gitchell gilt als Patient O. Das Virus bereitet sich in den militärischen Lagern
+								rasch weiter
+								aus.
+							</p>
+							<p>
+								Andere Wissenschaftler vermuten den Ursprungsort des Virus im Fernen Osten. Gesichert
+								ist: Es
+								handelt sich um ein Vogelgrippevirus, das von Wasservögeln auf den Menschen übertragen
+								wurde.
+							</p>
+						</div>
+						<div class="mixed">Bild 1</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="grid-container-portrait">
+					<div class="left"></div>
+					<div class="right"></div>
+					<div class="logo"></div>
+					<div class="buttons"></div>
+					<div class="up"></div>
+					<div class="down"></div>
+					<div class="frame-portrait">
+						<div class="icon">
+							BOLLE
+						</div>
+						<div class="content">
+							<h3>Portrait Layout</h3>
+							<p>Anfang 1918 wird in Kansas (US) von einer neuen, heftigen Grippe berichtet. Kurz darauf
+								wird der
+								erste Fall im militärischen Ausbildungslager Camp Funston registriert: Der
+								Küchenunteroffizier
+								Albert Gitchell gilt als Patient O. Das Virus bereitet sich in den militärischen Lagern
+								rasch weiter
+								aus.
+							</p>
+							<p>
+								Andere Wissenschaftler vermuten den Ursprungsort des Virus im Fernen Osten. Gesichert
+								ist: Es
+								handelt sich um ein Vogelgrippevirus, das von Wasservögeln auf den Menschen übertragen
+								wurde.
+							</p>
+						</div>
+						<div class="portrait">Bild 1</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="grid-container-landscape">
+					<div class="left"></div>
+					<div class="right"></div>
+					<div class="logo"></div>
+					<div class="buttons"></div>
+					<div class="up"></div>
+					<div class="down"></div>
+					<div class="frame-landscape">
+						<div class="icon">
+							BOLLE
+						</div>
+						<div class="landscape">
+							<h3>Landscape Layout</h3>
+							<br><br><br>Bild 1
+						</div>
+						<div class="content">
+							<p>Anfang 1918 wird in Kansas (US) von einer neuen, heftigen Grippe berichtet. Kurz darauf
+								wird der
+								erste Fall im militärischen Ausbildungslager Camp Funston registriert: Der
+								Küchenunteroffizier
+								Albert Gitchell gilt als Patient O. Das Virus bereitet sich in den militärischen Lagern
+								rasch weiter
+								aus.
+							</p>
+						</div>
 
+					</div>
+				</div>
+			</section>
 			<!-- 0 / landing page -->
 			<section>
-				<h2>Willkommen im open-museum</h2>
-
-				<p>Anfang 1918 wird in Kansas (US) von einer neuen, heftigen Grippe berichtet. Kurz darauf wird der
-					erste Fall im militärischen Ausbildungslager Camp Funston registriert: Der Küchenunteroffizier
-					Albert Gitchell gilt als Patient O. Das Virus bereitet sich in den militärischen Lagern rasch weiter
-					aus.
-				</p>
-				<p>
-					Andere Wissenschaftler vermuten den Ursprungsort des Virus im Fernen Osten. Gesichert ist: Es
-					handelt sich um ein Vogelgrippevirus, das von Wasservögeln auf den Menschen übertragen wurde.
-				</p>
 				<!-- <p>
 					<img width="200" height="200" data-src="https://media0.giphy.com/media/2gUHK3J2NCMsqsz1su/giphy.gif"
 						alt="Erklärgif">
@@ -69,31 +360,30 @@ body {
 				<!-- 
 					Create or join group!!
 				-->
-
-				<div id="locator">
+				<!-- <div id="locator">
 					<a href="#/">
 						<img alt="Qries" src="images/navi_left@1.png" width="150" height="70">
 					</a>
-				</div>
+				</div> -->
 
 				<!-- <a href="#/3" class="navi" id="navi">links</a>
 				<a href="#/3" class="navi" id="navi">rechts</a>
 				<a href="#/3" class="navi" id="navi">oben</a>
 				<a href="#/3" class="navi" id="navi">unten</a> -->
 				<!-- <img src="images/navi_left@1.png" alt="left"> -->
-				<p>
+				<!-- <p>
 					<button type="button" onclick="Reveal.configure({ controls: false })">Hide controls</button>
 					<button type="button" onclick="Reveal.configure({ controls: true })">Show controls</button>
 				</p>
 				<p>
 					Besuchst du uns
 				</p>
-				<p><a href="#/3" id="linkToPublic">ALLEINE</a> oder <a href="#/4">MIT FREUNDENEINE</a></p>
+				<p><a href="#/3" id="linkToPublic">ALLEINE</a> oder <a href="#/4">MIT FREUNDENEINE</a></p> -->
 
 			</section>
 
 			<!-- 1 / map -->
-			<section>
+			<section data-background="images/bg.jpg">
 				<h2>Grundriss</h2>
 				<p>
 					Bla
@@ -184,7 +474,7 @@ body {
 		// - https://github.com/hakimel/reveal.js#configuration
 		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
-
+			disableLayout: true,
 			// Display presentation control arrows
 			// TODO remove
 			controls: true,
