@@ -44,9 +44,9 @@
 //
 var server = null;
 if(window.location.protocol === 'http:')
-	server = "http://" + window.location.hostname + ":8088/janus";
+	server = "ws://" + window.location.hostname + ":2095";
 else
-	server = "https://" + window.location.hostname + ":8089/janus";
+	server = "wss://" + window.location.hostname + ":2096";
 
 var janus = null;
 var mixertest = null;
@@ -54,7 +54,7 @@ var opaqueId = "audiobridgetest-"+Janus.randomString(12);
 
 var spinner = null;
 
-var myroom = 1234;	// Demo room
+var myroom = 4321;	// Demo room
 var myusername = null;
 var myid = null;
 var webrtcUp = false;
@@ -368,4 +368,10 @@ function registerUsername() {
 		myusername = username;
 		mixertest.send({"message": register});
 	}
+}
+
+function startChat() {
+	var register = { "request": "join", "room": 1234, "display": "test" };
+	myusername = username;
+	mixertest.send({"message": register});
 }

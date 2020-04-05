@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,7 +18,7 @@
 	<meta name="theme-color" content="#fff8ff">
 
 	<script type="text/javascript" src="js/janus.js"></script>
-	<script type="text/javascript" src="js/audiobridge.js"></script>
+	<!-- <script type="text/javascript" src="js/audiobridge.js"></script> -->
 </head>
 
 <body>
@@ -312,9 +313,12 @@
 			// event.currentSlide, event.indexh, event.indexv
 		});
 
+		
+
+
 		// Generate url for lonely wolf with query string
 		document.getElementById("linkToPublic").onclick = function () {
-			const publicRoom = 2405
+			const publicRoom = 1234
 			location.href = "?group=" + publicRoom + "#/3";
 		};
 
@@ -326,10 +330,14 @@
 		// Read group number from query string
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
+		group = urlParams.get('group');
 		document.getElementById('group').value = urlParams.get('group');
-
+		if (group > 0) {
+			startChat()
+			//  block of code to be executed if the condition is true
+		  }
 		// TODO Check if group not in chats `location.href = "#/2"`
-		
+
 	</script>
 </body>
 
