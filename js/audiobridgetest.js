@@ -42,7 +42,7 @@
 // in the presented order. The first working server will be used for
 // the whole session.
 //
-var server = "https://dev.open-museum.ch/janus:8443";
+var server = ["wss://dev.open-museum.ch:2096", "https://dev.open-museum.ch/janus:8443"];
 //if(window.location.protocol === 'http:')
 //	server = "ws://" + window.location.hostname + ":2095";
 //else
