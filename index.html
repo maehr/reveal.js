@@ -20,15 +20,28 @@
 	<script type="text/javascript" src="js/janus.js"></script>
 	<!-- <script type="text/javascript" src="js/audiobridge.js"></script> -->
 	<style>
-		.frame {
-border-style: solid;
-		};
-		#navi {
-  background-image: url('images/navi_left@1.png');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+
+body {
+	background-image: url(images/logo@1.png);
+	background-size: 80px;
+	background-position: 99% 97%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding-bottom: 1;
+	z-index: -1;
 }
+.fart {
+	background-image: url(images/logo@1.png);
+	background-size: 80px;
+	background-position: 80% 97%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding-bottom: 1;
+	z-index: -1;
+}
+.intro {
+	background-color: yellow;
+  }
 	</style>
 </head>
 
@@ -38,24 +51,44 @@ border-style: solid;
 
 			<!-- 0 / landing page -->
 			<section>
-				<a href="#/3" class="navi" id="navi">ALLEINE</a>
-				<!-- <img src="images/navi_left@1.png" alt="left"> -->
-					<p>
-						<button type="button" onclick="Reveal.configure({ controls: false })">Hide controls</button>
-						<button type="button" onclick="Reveal.configure({ controls: true })">Show controls</button>
-					</p>
-					<h2>Willkommen im open-museum</h2>
-					<p>
-						<img width="200" height="200"
-							data-src="https://media0.giphy.com/media/2gUHK3J2NCMsqsz1su/giphy.gif" alt="Erklärgif">
-					</p>
-					<!-- 
+				<h2>Willkommen im open-museum</h2>
+
+				<p>Anfang 1918 wird in Kansas (US) von einer neuen, heftigen Grippe berichtet. Kurz darauf wird der
+					erste Fall im militärischen Ausbildungslager Camp Funston registriert: Der Küchenunteroffizier
+					Albert Gitchell gilt als Patient O. Das Virus bereitet sich in den militärischen Lagern rasch weiter
+					aus.
+				</p>
+				<p>
+					Andere Wissenschaftler vermuten den Ursprungsort des Virus im Fernen Osten. Gesichert ist: Es
+					handelt sich um ein Vogelgrippevirus, das von Wasservögeln auf den Menschen übertragen wurde.
+				</p>
+				<!-- <p>
+					<img width="200" height="200" data-src="https://media0.giphy.com/media/2gUHK3J2NCMsqsz1su/giphy.gif"
+						alt="Erklärgif">
+				</p> -->
+				<!-- 
 					Create or join group!!
 				-->
-					<p>
-						Besuchst du uns
-					</p>
-					<p><a href="#/3" id="linkToPublic">ALLEINE</a> oder <a href="#/4">MIT FREUNDENEINE</a></p>
+
+				<div id="locator">
+					<a href="#/">
+						<img alt="Qries" src="images/navi_left@1.png" width="150" height="70">
+					</a>
+				</div>
+
+				<!-- <a href="#/3" class="navi" id="navi">links</a>
+				<a href="#/3" class="navi" id="navi">rechts</a>
+				<a href="#/3" class="navi" id="navi">oben</a>
+				<a href="#/3" class="navi" id="navi">unten</a> -->
+				<!-- <img src="images/navi_left@1.png" alt="left"> -->
+				<p>
+					<button type="button" onclick="Reveal.configure({ controls: false })">Hide controls</button>
+					<button type="button" onclick="Reveal.configure({ controls: true })">Show controls</button>
+				</p>
+				<p>
+					Besuchst du uns
+				</p>
+				<p><a href="#/3" id="linkToPublic">ALLEINE</a> oder <a href="#/4">MIT FREUNDENEINE</a></p>
 
 			</section>
 
