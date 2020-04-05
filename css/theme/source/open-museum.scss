@@ -72,7 +72,7 @@ section.has-light-background {
 	grid-template-columns: 1fr 8fr 1fr;
 	grid-template-rows: 2fr 8fr 2fr;
 	gap: 0px 0px;
-	grid-template-areas: ". up .""left frame-mixed right""buttons down logo";
+	grid-template-areas: "mute up .""left frame-mixed right""map down logo";
 }
 
 .grid-container-portrait {
@@ -80,7 +80,7 @@ section.has-light-background {
 	grid-template-columns: 1fr 8fr 1fr;
 	grid-template-rows: 2fr 8fr 2fr;
 	gap: 0px 0px;
-	grid-template-areas: ". up .""left frame-portrait right""buttons down logo";
+	grid-template-areas: "mute up .""left frame-portrait right""map down logo";
 }
 
 .grid-container-landscape {
@@ -88,7 +88,7 @@ section.has-light-background {
 	grid-template-columns: 1fr 8fr 1fr;
 	grid-template-rows: 2fr 8fr 2fr;
 	gap: 0px 0px;
-	grid-template-areas: ". up .""left frame-landscape right""buttons down logo";
+	grid-template-areas: "mute up .""left frame-landscape right""map down logo";
 }
 
 .left {
