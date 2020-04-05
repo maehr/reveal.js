@@ -131,6 +131,7 @@
 
 		.icon {
 			grid-area: icon;
+			flex: 0 1 auto;
 		}
 
 		.content {
@@ -147,69 +148,6 @@
 
 		.portrait {
 			grid-area: portrait;
-		}
-
-
-		.body {
-			background-image: url(images/logo@1.png);
-			background-size: 90px;
-			background-position: 99% 97%;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			padding-bottom: 1;
-			z-index: 999;
-		}
-
-		.buttons {
-			background-image: url(images/mute@1.png), url(images/map@1.png);
-			background-size: 80px, 80px;
-			background-position: 1% 99%, 6.5% 99%;
-			background-repeat: no-repeat, no-repeat;
-			background-attachment: fixed, fixed;
-			padding-bottom: 1, 1;
-		}
-
-		.naviright {
-			background-image: url(images/navi_right@1.png);
-			background-size: 70px;
-			background-position: center right;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-
-		}
-
-		.navileft {
-			background-image: url(images/navi_left@1.png);
-			background-size: 70px;
-			background-position: center left;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-
-		}
-
-		.naviup {
-			background-image: url(images/navi_up@1.png);
-			background-size: 127px;
-			background-position: top center;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-
-		}
-
-		.navidown {
-			background-image: url(images/navi_down@1.png);
-			background-size: 127px;
-			background-position: bottom center;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-
-		}
-
-		.img2 {
-			position: relative;
-			width: 200px;
-			height: 200px;
-			background: url("https://www.google.com/images/srpr/logo11w.png") no-repeat;
 		}
 	</style>
 </head>
@@ -248,7 +186,9 @@
 						</a>
 					</div>
 					<div class="down">
-						
+						<a href="#">
+							<img alt="down" src="images/navi_down@1.png">
+						</a>
 					</div>
 					<div class="frame-text">
 						<div class="icon">
@@ -495,8 +435,8 @@
 		Reveal.initialize({
 			// The "normal" size of the presentation, aspect ratio will be preserved
 			// when the presentation is scaled to fit different resolutions
-			width: 960,
-			height: 700,
+			//width: 960,
+			//height: 700,
 
 			disableLayout: true,
 			// Display presentation control arrows
@@ -675,8 +615,6 @@
 		Reveal.addEventListener('ready', function (event) {
 			// event.currentSlide, event.indexh, event.indexv
 		});
-
-
 
 
 		// Generate url for lonely wolf with query string
