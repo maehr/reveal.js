@@ -23,12 +23,12 @@ body {
 
 ::selection {
   color: #fff;
-  background: #4e48ff;
+  background: #FF5E99;
   text-shadow: none; }
 
 ::-moz-selection {
   color: #fff;
-  background: #4e48ff;
+  background: #FF5E99;
   text-shadow: none; }
 
 .reveal .slides section,
@@ -228,9 +228,6 @@ body {
 /*********************************************
  * IMAGES
  *********************************************/
-.reveal section img {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
-
 .reveal section img.plain {
   border: 0;
   box-shadow: none; }
@@ -277,3 +274,14 @@ body {
 
 .reveal h1, h2, h3, h4 {
   text-align: left; }
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding: 0px 0px;
+  pointer-events: auto;
+  z-index: 10;
+  transform-style: flat;
+  transition: transform-origin 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), transform 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), visibility 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985), opacity 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
