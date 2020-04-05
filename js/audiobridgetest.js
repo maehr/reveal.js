@@ -42,11 +42,11 @@
 // in the presented order. The first working server will be used for
 // the whole session.
 //
-var server = null;
-if(window.location.protocol === 'http:')
-	server = "ws://" + window.location.hostname + ":2095";
-else
-	server = "wss://" + window.location.hostname + ":2096";
+var server = "wss://dev.open-museum.ch:2096";
+//if(window.location.protocol === 'http:')
+//	server = "ws://" + window.location.hostname + ":2095";
+//else
+//	server = "wss://" + window.location.hostname + ":2096";
 
 var janus = null;
 var mixertest = null;
