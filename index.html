@@ -19,30 +19,46 @@
 
 	<script type="text/javascript" src="js/janus.js"></script>
 	<!-- <script type="text/javascript" src="js/audiobridge.js"></script> -->
+	<style>
+		.frame {
+border-style: solid;
+		};
+		#navi {
+  background-image: url('images/navi_left@1.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+	</style>
 </head>
 
 <body>
 	<div class="reveal">
 		<div class="slides">
+
 			<!-- 0 / landing page -->
 			<section>
-				<p>
-					<button type="button" onclick="Reveal.configure({ controls: false })">Hide controls</button>
-					<button type="button" onclick="Reveal.configure({ controls: true })">Show controls</button>
-				</p>
-				<h2>Willkommen im open-museum</h2>
-				<p>
-					<img width="200" height="200" data-src="https://media0.giphy.com/media/2gUHK3J2NCMsqsz1su/giphy.gif"
-						alt="Erklärgif">
-				</p>
-				<!-- 
+				<a href="#/3" class="navi" id="navi">ALLEINE</a>
+				<!-- <img src="images/navi_left@1.png" alt="left"> -->
+					<p>
+						<button type="button" onclick="Reveal.configure({ controls: false })">Hide controls</button>
+						<button type="button" onclick="Reveal.configure({ controls: true })">Show controls</button>
+					</p>
+					<h2>Willkommen im open-museum</h2>
+					<p>
+						<img width="200" height="200"
+							data-src="https://media0.giphy.com/media/2gUHK3J2NCMsqsz1su/giphy.gif" alt="Erklärgif">
+					</p>
+					<!-- 
 					Create or join group!!
 				-->
-				<p>
-					Besuchst du uns
-				</p>
-				<p><a href="#/3" id="linkToPublic">ALLEINE</a> oder <a href="#/4">MIT FREUNDENEINE</a></p>
+					<p>
+						Besuchst du uns
+					</p>
+					<p><a href="#/3" id="linkToPublic">ALLEINE</a> oder <a href="#/4">MIT FREUNDENEINE</a></p>
+
 			</section>
+
 			<!-- 1 / map -->
 			<section>
 				<h2>Grundriss</h2>
@@ -313,7 +329,7 @@
 			// event.currentSlide, event.indexh, event.indexv
 		});
 
-		
+
 
 
 		// Generate url for lonely wolf with query string
@@ -335,9 +351,8 @@
 		if (group > 0) {
 			startChat()
 			//  block of code to be executed if the condition is true
-		  }
+		}
 		// TODO Check if group not in chats `location.href = "#/2"`
-
 	</script>
 </body>
 

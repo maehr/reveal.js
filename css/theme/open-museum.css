@@ -18,7 +18,7 @@ body {
 .reveal {
   font-family: "Open Sans", sans-serif;
   font-size: 36px;
-  font-weight: normal;
+  font-weight: 300;
   color: #001400; }
 
 ::selection {
